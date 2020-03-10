@@ -10,7 +10,19 @@ if [ "$1" = 'manualcheck' ]; then
 fi
 
 # Check if homebrew is installed
-if [[ -f /usr/local/bin/brew ]]; then
+CURRENTUSER=$(/usr/bin/python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");')
+
+if [[ $CURRENTUSER != "" ]]; then
+    brew=$(sudo -i -u $CURRENTUSER command -v brew)
+
+    if [[ $? = 1 ]]; then
+        brew="/usr/local/bin/brew"
+    fi
+else
+    brew="/usr/local/bin/brew"
+fi
+
+if [[ -f $brew ]]; then
 
     # Create cache dir if it does not exist
     DIR=$(dirname $0)
@@ -19,7 +31,7 @@ if [[ -f /usr/local/bin/brew ]]; then
 
     # The sudo is needed to escape brew.sh's UID of 0 check
     BREWCONFIG='[{"'
-    BREWCONFIG="$BREWCONFIG$(cd /; sudo -HE -u nobody /usr/local/bin/brew config | sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/", "/g' -e 's/: /": "/g')"
+    BREWCONFIG="$BREWCONFIG$(cd /; sudo -HE -u nobody $brew config | sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/", "/g' -e 's/: /": "/g')"
     BREWCONFIG="$BREWCONFIG\"}]"
 
     echo "${BREWCONFIG}" > "${homebrewfile}"
