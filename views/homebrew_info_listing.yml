@@ -1,0 +1,39 @@
+i18n_title: homebrew_info.reporttitle
+not_null_column: homebrew_info.homebrew_version
+table:
+  - column: machine.computer_name
+    i18n_header: listing.computername
+    formatter: clientDetail
+    tab_link: homebrew_info-tab
+  - column: reportdata.serial_number
+    i18n_header: serial
+  - {i18n_header: homebrew_info.homebrew_version, column: homebrew_info.homebrew_version}
+  - {i18n_header: homebrew_info.core_tap_head, column: homebrew_info.core_tap_head}
+  - {i18n_header: homebrew_info.last_commit, column: homebrew_info.last_commit}
+  - {i18n_header: homebrew_info.origin, column: homebrew_info.origin}
+  - {i18n_header: homebrew_info.homebrew_prefix, column: homebrew_info.homebrew_prefix}
+  - {i18n_header: homebrew_info.homebrew_git_config_file, column: homebrew_info.homebrew_git_config_file}
+  - {i18n_header: homebrew_info.homebrew_ruby, column: homebrew_info.homebrew_ruby}
+  - {i18n_header: homebrew_info.homebrew_noanalytics_this_run, column: homebrew_info.homebrew_noanalytics_this_run, formatter: binaryYesNo}
+  - {i18n_header: homebrew_info.homebrew_cask_opts, column: homebrew_cask_opts}
+  - {i18n_header: homebrew_info.homebrew_make_jobs, column: homebrew_make_jobs}
+  - {i18n_header: homebrew_info.command_line_tools, column: homebrew_info.command_line_tools}
+  - {i18n_header: homebrew_info.cpu, column: homebrew_info.cpu}
+  - {i18n_header: homebrew_info.git, column: homebrew_info.git}
+  - {i18n_header: homebrew_info.clang, column: homebrew_info.clang}
+  - {i18n_header: homebrew_info.curl, column: homebrew_info.curl}
+  - {i18n_header: homebrew_info.xcode, column: homebrew_info.xcode}
+  - {i18n_header: homebrew_info.macos, column: homebrew_info.macos}
+  - {i18n_header: homebrew_info.rosetta_2, column: homebrew_info.rosetta_2}
+  - {i18n_header: homebrew_info.java, column: homebrew_info.java}
+  - {i18n_header: homebrew_info.perl, column: homebrew_info.perl}
+  - {i18n_header: homebrew_info.python, column: homebrew_info.python}
+  - {i18n_header: homebrew_info.ruby, column: homebrew_info.ruby}
+  - {i18n_header: homebrew_info.x11, column: homebrew_info.x11}
+  - {i18n_header: homebrew_info.head, column: homebrew_info.head}
+  - {i18n_header: homebrew_info.homebrew_bottle_domain, column: homebrew_info.homebrew_bottle_domain}
+  - {i18n_header: homebrew_info.homebrew_cellar, column: homebrew_info.homebrew_cellar}
+  - {i18n_header: homebrew_info.homebrew_repository, column: homebrew_info.homebrew_repository}
+  - {i18n_header: homebrew_info.core_cask_tap, column: homebrew_info.core_cask_tap}
+  - {i18n_header: homebrew_info.core_tap_origin, column: homebrew_info.core_tap_origin}
+  - {i18n_header: homebrew_info.core_tap_last_commit, column: homebrew_info.core_tap_last_commit}

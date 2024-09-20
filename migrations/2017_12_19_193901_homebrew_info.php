@@ -123,7 +123,7 @@ class HomebrewInfo extends Migration
             $table->index('curl');
         });
     }
-    
+
     public function down()
     {
         $capsule = new Capsule();
