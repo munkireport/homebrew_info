@@ -13,7 +13,7 @@ def get_brew_info(brew):
     cachedir = '%s/cache' % os.path.dirname(os.path.realpath(__file__))
 
     # We need this awful, ugly workaround because homebrew is evil when it comes to scripting as `root`
-    os.system("cd "+cachedir+"; /usr/bin/sudo -HE -u "+homebrew_owner+" "+brew+" config > homebrew_info.txt")
+    os.system("/usr/bin/sudo -HE -u "+homebrew_owner+" "+brew+" config > "+cachedir+"/homebrew_info.txt")
 
     result = {}
 
